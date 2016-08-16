@@ -33,7 +33,7 @@ USER $user
 RUN git clone https://github.com/yyuu/pyenv.git ~/.pyenv && \
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv && \
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build && \
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d && \
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # my dotfiles
 RUN mkdir -p ~/.config/fish && \
