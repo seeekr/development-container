@@ -64,8 +64,8 @@ RUN pyenv rehash && \
     pyenv global $pyversion
 
 ENV PATH /home/$user/.pyenv/versions/$pyversion/bin/:$PATH
-RUN conda -y update conda
-RUN conda -y install seaborn
+RUN conda update -y conda
+RUN conda install -y seaborn
 RUN pip install keras autoflake
 RUN pip install jedi==0.8.1 json-rpc==1.8.1 service_factory==0.1.2
 
