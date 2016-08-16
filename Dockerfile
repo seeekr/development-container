@@ -45,8 +45,8 @@ RUN mkdir -p ~/.config/fish && \
 # spacemacs
 RUN curl $my_dotspacemacs -o ~/.spacemacs && \
 ## Try twice  https://github.com/syl20bnr/spacemacs/issues/5658
-    env SHELL=/bin/bash emacs -nw -batch -u root -q -kill && \
-    env SHELL=/bin/bash emacs -nw -batch -u root -q -kill
+    env SHELL=/bin/bash emacs -nw -batch -u $user -q -kill && \
+    env SHELL=/bin/bash emacs -nw -batch -u $user -q -kill
 
 # golang packages
 ENV GOPATH /home/$user
