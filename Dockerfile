@@ -79,3 +79,14 @@ RUN rbenv rehash && \
     rbenv install $rbversion && \
     rbenv global $rbversion && \
     rbenv exec gem install --no-document  pry pry-doc ruby_parser rubocop
+
+USER root
+
+# sshd
+RUN mkdir /var/run/sshd && \
+    sed -ri 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config && \
+    sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+
+EXPOSE 22
+
+CMD    ["/usr/sbin/sshd", "-D"]
