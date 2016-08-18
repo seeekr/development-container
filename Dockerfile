@@ -49,7 +49,7 @@ RUN curl $my_dotspacemacs -o ~/.spacemacs && \
     env SHELL=/bin/bash emacs -nw -batch -u $user -q -kill
 
 # golang packages
-ENV GOPATH /home/$user
+ENV GOPATH /home/$user/go
 ## source code
 RUN go get -u -v github.com/nsf/gocode && \
     go get -u -v github.com/rogpeppe/godef && \
@@ -84,8 +84,7 @@ USER root
 
 # sshd
 RUN mkdir /var/run/sshd && \
-    sed -ri 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config && \
-    sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+    sed -ri 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 
 EXPOSE 22
 
