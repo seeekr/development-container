@@ -42,7 +42,8 @@ RUN mkdir -p ~/.config/fish && \
     curl $my_dottmuxconf -o ~/.tmux.conf && \
     git config --global user.email "$email" && \
     git config --global user.name "$user" && \
-    git config --global ghq.root /home/$user/work/ghq
+    git config --global ghq.root /home/$user/work/ghq && \
+    git config --global push.default simple
 
 # spacemacs
 RUN curl $my_dotspacemacs -o ~/.spacemacs && \
