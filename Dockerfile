@@ -19,6 +19,7 @@ RUN apt-get update && apt-get -y upgrade && \
     apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN useradd -m $user && \
+    gpasswd -a $user sudo && \
     chsh -s /usr/bin/fish $user
 
 # golang
