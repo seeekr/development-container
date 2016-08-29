@@ -20,7 +20,8 @@ RUN apt-get update && apt-get -y upgrade && \
 
 RUN useradd -m $user && \
     gpasswd -a $user sudo && \
-    chsh -s /usr/bin/fish $user
+    chsh -s /usr/bin/fish $user && \
+    sed -ri 's/%sudo   ALL=(ALL:ALL) ALL/%sudo   ALL=(ALL:ALL) NOPASSWD:ALL/g' /etc/sudoers
 
 # golang
 RUN curl -O https://storage.googleapis.com/golang/$goversion.tar.gz && \
