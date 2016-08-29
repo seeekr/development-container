@@ -89,9 +89,9 @@ RUN mkdir /var/run/sshd && \
     sed -ri 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
 
 COPY authorized_keys /home/juntaki/.ssh/authorized_keys
-RUN chmod 700 /home/juntaki/.ssh && \
-    chmod 700 /home/juntaki/.ssh/authorized_keys && \
-    chown -R juntaki:juntaki /home/juntaki/.ssh
+RUN chmod 700 /home/$user/.ssh && \
+    chmod 700 /home/$user/.ssh/authorized_keys && \
+    chown -R $user:$user /home/$user/.ssh
 
 EXPOSE 22
 
