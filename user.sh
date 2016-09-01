@@ -13,7 +13,8 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # golang packages
-export GOPATH=/home/$user/go
+export GOPATH=/home/$user/.go
+export GOBIN=$GOPATH/bin
 ## source code
 go get -u -v github.com/nsf/gocode
 go get -u -v github.com/rogpeppe/godef
