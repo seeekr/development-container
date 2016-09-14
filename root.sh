@@ -14,7 +14,7 @@ locale-gen ja_JP.UTF-8
 
 sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu%http://ftp.iij.ad.jp/pub/linux/ubuntu/archive/%g" /etc/apt/sources.list
 apt-get update && apt-get -y upgrade
-apt-get -y install git ssh software-properties-common sudo tmux emacs-nox golang libssl-dev libreadline-dev zlib1g-dev global curl
+apt-get -y install git ssh software-properties-common sudo tmux emacs-nox golang libssl-dev libreadline-dev zlib1g-dev global curl npm
 apt-add-repository -y ppa:fish-shell/release-2
 apt-get update
 apt-get -y install fish
@@ -23,6 +23,11 @@ apt-get clean
 curl -O https://storage.googleapis.com/golang/$goversion.tar.gz
 tar -C /usr/local -xzf $goversion.tar.gz
 rm $goversion.tar.gz
+
+npm i -g n
+npm i -g npm
+npm i -g eslint eslint-plugin-react
+n latest
 
 chsh -s /usr/bin/fish $user
 echo "$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$user
