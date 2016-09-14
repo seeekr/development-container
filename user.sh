@@ -21,6 +21,7 @@ go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/oracle
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
+go get -u -v github.com/golang/lint/golint
 ## files
 go get -u -v github.com/motemen/ghq
 go get -u -v github.com/github/hub
