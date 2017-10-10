@@ -22,7 +22,7 @@ cat << EOF >> /etc/default/locale
 LANG=en_US.UTF-8
 EOF
 locale-gen "en_US.UTF-8"
-cat << EOF >> /etc/profile
+cat << EOF >> $home/.bashrc
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
