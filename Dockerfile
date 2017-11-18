@@ -1,6 +1,5 @@
 FROM ubuntu:xenial
 
-COPY env.sh /env.sh
 COPY setup.sh /setup.sh
 
 RUN /setup.sh && \
